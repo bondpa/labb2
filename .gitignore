@@ -1,3 +1,4 @@
 .git/
 venv/
 secret.key
+test.txt

@@ -4,10 +4,25 @@
 # 2. dekrypterar en krypterad fil och återställer originalet
 
 import argparse
+from cryptography.fernet import Fernet
 
 def encrypt(file_path, key):
     print(f"Krypterar {file_path} med nyckeln {key}")
+
+    with open(file_path, "rb") as f:
+        file = f.read()
+
+    with open(key, "rb") as k:
+        key = k.read()
     
+    fernet = Fernet(key)
+    enc_file = fernet.encrypt(file)
+
+    print(enc_file)
+
+    return enc_file
+    
+
 
 def decrypt(file_path, key):
     print(f"Dekrypterar {file_path} med nyckeln {key}")
