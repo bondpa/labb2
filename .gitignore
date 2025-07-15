@@ -2,3 +2,4 @@
 venv/
 secret.key
 test.txt
+test.txt.enc

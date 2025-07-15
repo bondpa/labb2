@@ -20,9 +20,13 @@ def encrypt(file_path, key):
 
     print(enc_file)
 
-    return enc_file
-    
+    enc_file_path = file_path + ".enc"
 
+    with open(enc_file_path, "wb") as f:
+        f.write(enc_file)
+
+    print(f"Krypterad fil sparad som {enc_file_path}")
+    
 
 def decrypt(file_path, key):
     print(f"Dekrypterar {file_path} med nyckeln {key}")
