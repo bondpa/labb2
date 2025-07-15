@@ -17,7 +17,7 @@ def main():
     parser = argparse.ArgumentParser(description="Kryptera eller dekryptera fil")
     parser.add_argument("action", choices=["encrypt", "decrypt"], help="Kryptera eller dekryptera filen")
     parser.add_argument("file", help="Sökväg till filen")
-    parser.add_argument("key", help="Sökväg till nyckeln")
+    parser.add_argument("key", default="secret.key", help="Sökväg till nyckeln")
 
     args = parser.parse_args()
 
