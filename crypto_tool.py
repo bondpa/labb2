@@ -21,5 +21,11 @@ def main():
 
     args = parser.parse_args()
 
+    if args.action == "encrypt":
+        encrypt(args.file, args.key)
+    elif args.action == "decrypt":
+        decrypt(args.file, args.key)
+
+
 if __name__ == "__main__":
     main()
